@@ -32,7 +32,7 @@ evajimenezgarcia.github.io/
    - Nivel 1 (`filiacion/index.html`): `<link rel="stylesheet" href="../assets/uem.css">`
    - Nivel 2 (`publicaciones/2026/index.html`): `<link rel="stylesheet" href="../../assets/uem.css">`
    - Nivel 3 (`ciie-ue/ediciones/2026/index.html`): `<link rel="stylesheet" href="../../../assets/uem.css">`
-4. **Recursos propios de una página:** si una página usa imágenes o datos propios, guardarlos dentro de su misma carpeta (ej. `comparativa-mejoras/capturas/`) con rutas relativas simples (`capturas/imagen.png`).
+4. **Recursos propios de una página:** si una página usa imágenes o datos propios, guardarlos dentro de su misma carpeta (ej. `area/pagina/imagenes/`) con rutas relativas simples (`imagenes/grafico.png`).
 5. **Carpetas intermedias:** si se crea una subpágina anidada nueva (ej. `ciie-ue/2026/`), crear o actualizar el `index.html` de la carpeta padre (`ciie-ue/index.html`) si procede para evitar errores 404 al acortar la URL.
 6. **Portada raíz (`index.html`):** añadir o actualizar el enlace en `index.html` solo si la autora desea que la página aparezca listada en el directorio principal.
 

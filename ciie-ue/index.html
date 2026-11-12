@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Centro de Investigación e Innovación Educativa (CIIE-UE) · Resumen ejecutivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/uem.css">
+<style>
+  /* Componentes específicos del informe CIIE-UE sobre tokens oficiales de ../assets/uem.css */
+  .header-hero .logo {
+    display: block;
+    width: 150px;
+    height: auto;
+    border-radius: var(--radius-card);
+    background: var(--color-white);
+    padding: 4px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+  }
+
+  .section-open.section-first {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .sec-tag {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-red-accessible);
+    margin-bottom: 4px;
+  }
+
+  .sec-lead {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    max-width: 72ch;
+    margin: 0 0 22px;
+  }
+
+  .ext-link {
+    color: var(--color-blue);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .ext-link:hover {
+    color: var(--color-red-accessible);
+  }
+
+  .ext-link:focus-visible,
+  ul.refs.refs-grid a:focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 2px;
+  }
+
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Mapa de 8 líneas de actividad */
+  .map {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 245px), 1fr));
+    gap: 16px;
+    margin-top: 14px;
+  }
+
+  .map .tc {
+    padding: 20px;
+    gap: 8px;
+    border-top-color: var(--color-red);
+  }
+
+  .map .tc .n {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 24px;
+    border-radius: var(--radius-square);
+    background: var(--color-anthracite);
+    color: var(--color-white);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .map .tc h3 {
+    font-size: 16px;
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+
+  .map .tc .big {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-red-accessible);
+    margin: 2px 0;
+  }
+
+  .map .tc .big small {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-left: 5px;
+    letter-spacing: 0;
+  }
+
+  .map .tc p {
+    font-size: 14.5px;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    max-width: 72ch;
+  }
+
+  .map .tc.alt {
+    background: var(--color-blue-tint);
+    border-color: var(--color-blue-border);
+    border-top-color: var(--color-blue);
+  }
+
+  .map .tc.alt .n {
+    background: var(--color-blue);
+  }
+
+  .map .tc.alt .big {
+    color: var(--color-blue);
+  }
+
+  /* Títulos y subtítulos dentro de tarjetas */
+  .card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-anthracite);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .card .note {
+    margin-bottom: 16px;
+  }
+
+  .card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .three {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 20px;
+    align-items: start;
+  }
+
+  /* Ajuste de columna de valor en barras horizontales para evitar saltos en '%' */
+  .bars-pct .bar {
+    grid-template-columns: minmax(0, 14.5rem) 1fr 3.6rem;
+  }
+
+  .bars-score .bar {
+    grid-template-columns: minmax(0, 11rem) 1fr 3.2rem;
+  }
+
+  .bars-days .bar {
+    grid-template-columns: 88px 1fr 36px;
+  }
+
+  .bars-channels .bar {
+    grid-template-columns: 1fr 42px;
+  }
+
+  .bars-channels .bar .trk {
+    grid-column: 1 / -1;
+  }
+
+  .bar .val {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 36rem) {
+    .bars-pct .bar,
+    .bars-score .bar {
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  /* Cuadrícula de cifras estadísticas dentro de tarjetas */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .stat {
+    background: var(--color-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-square);
+    padding: 14px 16px;
+  }
+
+  .stat b {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-red-accessible);
+    white-space: nowrap;
+  }
+
+  .stat.stat-blue b {
+    color: var(--color-blue);
+  }
+
+  .stat span {
+    display: block;
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 440px) {
+    .stats {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Dónuts CSS (Perfil de solicitantes) */
+  .donuts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 24px;
+    margin-top: 6px;
+  }
+
+  .donut-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .donut-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-anthracite);
+  }
+
+  .donut {
+    position: relative;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+  }
+
+  .donut::before {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border-radius: 50%;
+    background: var(--color-card-bg);
+  }
+
+  .donut b {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-red-accessible);
+    white-space: nowrap;
+  }
+
+  .donut.donut-blue b {
+    color: var(--color-blue);
+  }
+
+  .donut-item ul {
+    list-style: none;
+    font-size: 14px;
+    color: var(--color-text-body);
+    text-align: left;
+  }
+
+  .donut-item li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+  }
+
+  /* Leyenda horizontal */
+  .legend-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-size: 14px;
+    color: var(--color-text-body);
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-card-border);
+  }
+
+  .legend-inline > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .legend-inline .sw {
+    margin-right: 0;
+  }
+
+  /* Barras verticales mensuales con scroll interno */
+  .scroll {
+    overflow-x: auto;
+    max-width: 100%;
+    padding-bottom: 4px;
+  }
+
+  .months {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 236px;
+    min-width: 680px;
+    padding-top: 24px;
+  }
+
+  .col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    gap: 5px;
+    font-size: 13px;
+  }
+
+  .col .vbar {
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+    background: var(--color-blue);
+    min-height: 3px;
+  }
+
+  .col.new .vbar {
+    background: var(--color-red);
+  }
+
+  .col b {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--color-anthracite);
+  }
+
+  .col span {
+    color: var(--color-text-muted);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* Subbloque canales / días */
+  .sub-head {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-anthracite);
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Barra apilada del boletín Sway */
+  .stack {
+    display: flex;
+    height: 44px;
+    border-radius: var(--radius-square);
+    overflow: hidden;
+    margin: 8px 0 6px;
+    background: var(--color-bar-track);
+  }
+
+  .stack div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 0 6px;
+    white-space: nowrap;
+  }
+
+  /* Barras pareadas Zenodo */
+  .pairs {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(96px, 1fr));
+    gap: 12px;
+    align-items: end;
+    height: 214px;
+    min-width: 520px;
+    padding-top: 24px;
+  }
+
+  .pair {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    gap: 8px;
+  }
+
+  .pair .pbars {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 148px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pair .pbars i {
+    display: block;
+    width: 38%;
+    max-width: 34px;
+    border-radius: 3px 3px 0 0;
+    font-style: normal;
+    position: relative;
+  }
+
+  .pair .pbars i em {
+    position: absolute;
+    top: -21px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--color-anthracite);
+    white-space: nowrap;
+  }
+
+  .pair span {
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.3;
+    color: var(--color-text-muted);
+    min-height: 2.6em;
+  }
+
+  /* Rejilla de referencias Zenodo (sobre .refs oficial de uem.css) */
+  ul.refs.refs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    border-top: none;
+  }
+
+  ul.refs.refs-grid li {
+    background: var(--color-white);
+    border: 1px solid var(--color-card-border);
+    border-left: 4px solid var(--color-red);
+    border-radius: var(--radius-square);
+    padding: 14px 16px;
+    text-indent: 0;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--color-text-body);
+  }
+
+  ul.refs.refs-grid strong {
+    display: block;
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--color-anthracite);
+    margin-bottom: 4px;
+  }
+
+  ul.refs.refs-grid a {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* Píldoras de pasos */
+  .steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 4px 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: s;
+  }
+
+  .steps li {
+    counter-increment: s;
+    background: var(--color-blue-tint);
+    border: 1px solid var(--color-blue-border);
+    color: var(--color-anthracite);
+    border-radius: 999px;
+    padding: 6px 14px 6px 8px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.35;
+  }
+
+  .steps li::before {
+    content: counter(s);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-blue);
+    color: var(--color-white);
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 560px) {
+    .card {
+      padding: 20px 18px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+  <!-- CABECERA INSTITUCIONAL (ANTRACITA #1E1E1E) -->
+  <header class="header-hero">
+    <div class="header-top">
+      <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQYAAABvCAIAAACB2/lNAABVmUlEQVR42u29ebxl11Ue+H1r7XPufVPNVZpHS9ZoyZblQbYJGGwccNOE0caBmHa6IRB6SkiaQDoJCYSkGwIdEgKZwxSwwcbGBozBs8GDbNmyLMmloaRSqVTz+Oq9d+/Za63+Y+9z732lKtkSlqA7b//er35Vr96799xz9tpr+tb30W+7DhtrY22sfsnGLdhYG2vDJDbWxtowiY21sTZMYmNtrA2T2Fgba8MkNtbG2jCJjbWxNkxiY22sDZPYWBtrwyQ21sbaMImNtbE2TGJjbawNk9hYG2vDJDbWxtowiY21sTZM4hm93Vl/8qwfYoDxtK6QAQZRvmZfZPL1dNeX+SuTHwt+uZ9uY30ZK0B/6gfxzB7rl7PSM/kl+tnXGlL2YvAcO4aB4HSjBAQEYvJnMGLdC5bfekqTWPd2QYCB3F+YMICQ8jrlhQgEPTi9JAAunLwPA4DPfCjnWe/VfyaA0j8vBAl4fSsB+3eHBMsnDYZPf/v/4+vJuzDOb/Llv57Bxg0GGBKTu4zg9GH2L1if3TN+l6+oSTzpCs55X2Y3H8ODAvjEour2hSPAiHWbhtMPXH+l/nm2kZQXj3oJxUdMXsdnf7jYw+wFB8uvRv9eXl9l1jJn3U79XgAB9u/FYswC9p8LxfBmPunGeiYbbHIOCWL6FOIczvkvgJegy/qNVfcf10cJszsQAGH1hzn9zE+KmWbPg5j55Ge92DqbZBAgSECBCEYQEGcA4SCcEzc18VqTKw/xYDDEozeJyfYunkJcZhx6hEQgZp5ZeQfU90U1lhkP9v+3hO1LbsQ/406dueHV3/ZhSL2n5fzD9OvPPXBabw8ljObMtc3s1/4Y5jT06P1GzIYj1QjkfB8xpuZz7qO32IMEA3AgotzGqZOFAwwyZgKiCAaIs8JSmVz15APWTAUBWu+qJxcV00sLB6T/cyYsDm4kFc8s85xNDme3RjxrtzM940Ni/bXWo3pma3Eaa8ADDNYtOHPY+3SfzDoFAIAR5PQF+xgdDKBGQdPwvj8uREqiTStxGmseJuXqAJ0GoxGsyQOLa2JAHMEZ8w6YFIsmq6diMeaolhDrIythcQuz3w2u83Ib/uFLLReZhh41S7OZN2AfwZbwQb6yviI9Y//A9QEM19+MmS3LmSgp1oWEkGIVMUlxZxJiqa8v648N7++Cr38AgT6YYdBJR5CI4qLCGUIy4IiyX50MBhARAhdG1Htxjgyy2Hp9M5m83Vn2PbWt9Ya+cdo/7d0FOCHBGkTTUU+h2VyR6x7Ln6OXKIUUBwSQ6PNIAMWOOYlIZpKI6d4N8Kw9VyKXmuNy1u24gzOBOCeRUPmzRu+T2IxweMey3RFBN0FCSJTXdakGZ0B/FQwwgmGUchETu+VspENHgDAEgzL5GfFixXF2TFQ9A5wSoKwrZOG/tbziGcZMAfYOuSQSUU65qVU8WwXuZ15x4tkn6UwgwXXmULZg2ffRb/yy/wjOfLz6m/1GL78S09iIYGgQNbmCT3PtcmRHnnlUtbTbl54iZlxXubc1FyCJAOHR1069VmBDnlwDRJCMPqIrxaeZhKmWpSi9ScST7tXG+hI9iXIrJabFxH57laI2Jy7Yub5I+OdiEixbNaKG+hEAKeUv0W/pCBDCWt0JhEFFgzBzZ1BEyIgwc6X0W3yyoQISQS8ti+hT7xqUUD1nqhJSzaz4EwZiDBE4QJWMRpXZAQm6h0mSKM4HCMJVJUhzeslBnKoWEY5GyysXDx41y4voy1lTe0Bvnl56LBGJApIO1spIOQGeu2psRPRpD/oHdPbfz/qxp/P4GXWfRl9t45f3e5y87+TdJ9cwe21S4lsPOECZVAghBLWWJCNg5ozQejpJsOyoyWtGhIjMfuRnzSS8j3+ACA+CwmC4l6hCAMA9AuHVKhCUshUJEQlGwD2CQkJYXIQ5wusdJhAeGjFJ2AOkR4CBsPLpvTYHCIqER4SVAAmSYEjSIIMUuEOERDYTgSaBhwEeAQddKEKP8KgJjzBKq6Q8faIPqYp76rPraWbP2mslkwqC3plIAiCUCJ98pOeoov+kjT7Zf0/9Y19umNS7WfbJH9HbyflNdPbdJ2ZwlmXWv0cwrMbCfQpBLXE1PVwsSCDptJ1FknR3ABRhb3jPYeBUQzoDgSQ5Itw1JViEBSFEErKvy4AgVcINAWEg4DUDIcnOOkQkSSTgPi0ehNRIveYTfZNfJMLoESREKPCIoItEEFHSb3K2CR7ZJGn0cWiICAUR8NrxICmiEarFlKXEdqEOKQ90mjPHtJwk1T942R8MOpAzivtyR4MIL7nNc2wP59sT08P4GZ2g8PrgpC+/AV/C3klOdv8651AD6Dj7MkgwlTpllFurCAmDRYRSoPXZsbShHAIiPCJEtdgGARFx92dg+emZQ5UigvQShDhoUbpYjIBIcRDwKEUXdxMBPGCGcCmxkhlUSl7ipbMGJ0gqpuXXmYIoIhguEbmTlPrvIMJC6EoPBJlKrTU8IigSCDjhUBKgRxigwhRS3ESxoQAEEl1HEXhAAlGAG1Eqq303IjjbFmcJjaJ6ighESFJYBj3gX3G4wdPyD7M7si/ZMCLwJKfxNAL9YggxayZf7s4722LXB2/kBFAgkFLJ9kCEuEttNbEPq2op0ln3UoSIkAz3MIPI7Ad/DoqwAYCiQIS5EEJxcyWFrPse3heMSQU8I2QaUpdOMYGIRtUJNy/GzXri9n1s1rg14OVXwkxTMnehMhAeSg0wcpBCwCIkOhV1ZDeKanWwLgiXpAAwMoqEuMGVEhYoAU44ROER5QFZeRJSet/BoMc0jgIRpVYIeIQHhdDk3UgaCbiFiQpn/Mqzag9Rrm1a6ytPqmzgmAQsNROYnPFP6yxc71smiQHOX/0prvssi4049x2JEo2Hk3AGyXCDuRqpgiDMI5whEAGDBkQ5nhjhnjNJpgR3M1PV5yKXCIETZpZERVJ048iuTaMpufs43Bhmbu5WfF8gGA4HIgkpokSKSKLaJIaHhUdERNIEoWVDuFJZg6waMhW3EQjRFKpdHqmgtN4ALT1oiEAj+1gjxMcCH1tAUwaFjaYhOjOASSO6DIskzgiLFhKEKbxtOR6jbT3K60aBJ3pvoUInPAiXivwQp9ZMAtk6NuzcUyMBes59d1KfC/BoRKk0TI5bFuSDex+rVJBl3cryDPOKagOTY5iknyebYPlPn3VZT87sZ2sApQRrYVY6WsIYw7scEQxSJLQ4iq5JKTUqUer1UQMzkWK3xSSeCy/hCIscEhGIDEWCYmxxJtsyfdS2Nj8fc3McDqMdeBqEaAkoJEHNuLaCtTUZjXR1lSurCyELwIBsEPTwch+UoIeBEyCR9wchxYOdG4aLJ7tuzcJEOsAAkSShZp00umC+1TGU1Ka0Gr48bE6Pne5MaWQZXdZW3AyeF1Q3a9uErEZ3VP1MrImQMIgCYGIp+vXVtBASpAm8PO2gklo8m3IUFvDB4lysrCwNBptS62tjUijPRaWpBvlSw3T2roCqjFkHUiA4MtnFX3716ay9W7JhxDR/O+dSkThPpSt6+2TvwxwyBlaAZXCcEodzHCwkNgHR1Fpkgxks1ta4stLkPHCbM1skmqQlirPxmCLPzEU8A5OICAt4apoYm5lB50bBZeF4cfHI5sXxBTuXnnfV1muet+OKK5uLLsH2HZhbBBTmUMHqMg48fnrf3uN7Hz2++8HTD+3Zduzk2vGT86urC4jGTcCmFZfI1qkIIiRmugIupEbSTJ42Wdu2a3XzppWmHSuzKCKJ0dmFLW9dWxnuOzSkRmerose37zi+ZcuaqWpLSLaRDAiajsfjU8vpwOl2jNXNC0eu3nFCXUIJhZFAVplC80vmUjKf0pkISIgEywM3sVDvbLzYtoOVtbz/8HAtFmWAGPXVsGfdJCiAiEd0XZezBUHVElPVXj4CEUppUoIb/wxF3nLeh4eZZQ/HetRwOUIQTrRJG9FJkXSSRUf0NlYOGmAt59WgDxdXFuaPbdqUt29buOzKXVdds3XnRWl+AU2bu1G2tTxePvn4Y0cffPDkgQNzx09uOXkynTk9WlttmjapmplGaNOUOOrp11Rvu6HE/YwAS+xcWulkTQb6BIAW8ICBEiIj4xoHy4OFYxy0l176vJe+ZPiar8VVl2HQokl9301KG64HvgWQq7MZB0ZjfPbuwx/40P7P3tUcO7K0tjI3Wl2gt+IF6FERSk54uUYpb31adc+ZM1e+5S2bv/XbsWM7hBBBCCJBAhz7g198+DvfdNVgaNkPJL38LX8Nb3gDNm3DOKAKGMSBDNWjb3/Hsf/7X25fsTM3XnPZv/uX2LSALgCFleIwJydrMYkKuZ0k5KH1+zSIgRlhcKCzE//0p7sP/emWtVFDC3ZRgphnb7nXhqOkUxHL8wurg7kxGVLrZYxSyYhkeYEyOHF8U3jr9rRip8mJPgkZVrOP5xZPDefOaHLhBK8vPYosEQury1tWVxciAPXaeyihjoUTIi6yBpwKOTWYz1u2bLryeVfc8Qq8/A5cfDE0QaRupBpWZcAQHSJwegUPPzL+1Cf2f+JPzux7PC0vb2Zs6vLATJXIFhozPlQCZJTnd95OUSoDPeICGDxABxmQgmAjxRHhrirhRjW3LGmw4jiZ0j5t5QW3vuhbv6u57SVYnEfkkuigAyh16wgCYTB3G0gCBF5i60Cb8JI7dr7slTtXT5/86Ad2v+1t3L37stwtjtbmm2SeIXSPxIQIWEaTwGBkRYyUnSpSi3YeUp6OAAoCkA7NshLijSLDlyUt6IBIGKa+ZOiwDs4xB2fa1IxOrzSGwSI4DwJUIFCwG5bRSEm04QYIqH1zVQLaIzTHiAAVbNF1ED2s2iTfzA6MZ9gFeFrjK8LImUnH8EPgjje86dLXvA7ZEEBSOGEBISSwuoxufNeP/F1dOdO4ndXh+lKlRgcTIsI9CAwHh8+c2vmql1z5zd+Oiy8rRbcZr+WAYXxm+e1vO/me98x7sGkkCFG3sRBuDmEnugocpR7dccH2r/m6G779O3DFlSgFDxACKEBD2KSPXQcB3DG3iBtvaW+85cq/9r2+56FH3/GO+z74x88/s7olr7U5ErygTc06iISIWSilYTFYP49JsEDSvTanejiGiEbnEcY2wcewDE2WI7dLpyXtD57ZvvPlP/oP5ObbMLcAAEoPDUJKVWwKVuzLl6VWCxIKIBMQaml9DYebX/v1L7nj5Svvf//et77t4IMPXYBYErTuIo07JAmUAXfLSpRhiBBBM0A7BwaQHaXDKYRHarKowxUw6po286llM4DotCAjCYTpYKxqEqaCNIQO0Q91eNn2VAtQNNyFLUszguEMRzk7AEAhYaHaAgk+BpHboYpWjMmzHDaV2ipVYZ4bWU7Npq3bcPlVaFoU9Ba1dkvoGK360UOjhcVutIr8NF0RIXQgUYnwHJGb5IsLuPxyXHs9EID12BciHN7F8knbccGqB1KDnI0UQXZLEUjNaDjYP1o72Q4v/bpvuOa7vgdXXQsPSEKqu99ZAAQEvceAltmJBA06+28O5fk3X/XD11715jc/8TP/190f+ehV7fz8aGXeTZmpQlFzqia4Z88q530iyekAnC6lDBlSahPejYTCJrkZSIgyg7r1qKUvanPDd37bRW95CwZzZeIDqYwQCSBWumGgkFNQXkhT5kvNIASR0kxVQlvYGJuW5r/5m65/xR0Hfuddn//P//kW5w44PUX4Wl5t2yQMYXXKWuP7vsH8lP2ic6dZk9m9IEPE02RgFIQFQC+AggpVlh5Bzlp4kzo329cndQ7hQII5gjYK7wySplisZ9cqhIlunQvHlrMQSesHpIOBMu9ag1meWVvFebAeX6LUW0DHQg90YVa8vU5nDDGdKguQkbm2hqZZxHg1p4jE8FFqU4xlDekLJ04u3H7rrf/TD6UXvQJOaEIqsWgNtSUgTlABjclA9mT0Wnon2QEZGLS4YOdFP/6PL3xozyf+0T/ecuDgVbQ0dgQ6jwRFDkhAw8OFcs7HIhIQeIlmEAqUOjqowkYsLHsX4XlsK2nwGNtHFrd+7b/6hYve8n1Y2JKHgzEjFO4eCA/3sIB7+Sp/Q60h9WezgjCPbKVYjXBYjpAmp0FOCbsuuPCv/493/NzPHt2548HReDW1ISkN5xw2Go0mJXeJmAHhEpAIeXrza9Hj1hlaUmSfggxFXAqYxp0Bt6BLrUBPUQ2YwDnqtHcpVzCBQhVSn7PJoexWhglDNajl3PECchCFB0CIAqUUq4O5ud7Wn0YuQRGPcO/rbSIW7pYRUTO6AtCRAkkSUKDJg94R7bBA46A8Y3YsDe8f2eVv+u6bfvyfpBe/BO0QCwuhautArr4efT8dv57gAuv/JMawGYuOm0Fs2sTrr3vZL/zi4KV33DfyI9KOoIlJ3MWz0Es9JM7bewlXg2ZohhjFEkurUNGFddGxoYhC5/aj2XvtVa/8zf+Ma6/E/ADuKcBBclKkZbSKQWLTN4YgRCo9dyC791BXDxo0MxmYAxECoTBUgoSCCZCFF9/+vJ/96fY1r9598ugYHgGVgcqgoMKdRpRIz8qAKKDCc/jCdYff7IR3hR0Z0IEdaISjgPWm3UQjgyIANITOOtEaRMgU8BZ9DcL6l3cHsol7ivDuucH8kRruJaRzMkQgwqRULZASTNCVbkB4wc48/XqT9L0FB4SkJs5s4QAdYhCHRI9fI+juGBupXefMGMvgwdRc+qM/duHf+J9x4RWR5ozaBTKABCMCmehKC8ikomhY41kvWDtGGQlAroj/ELOWGhDMLXLnrit//Mev+N43398MR4N5HRvzmC09PMyFPB+kIK0fg5Ee2RcIMFzgpK61zf41nrzq6lf+/M9h82aIgloyA4F0MMtsRBiByIlZ6QyFOXqnEww40RkYFNckkGTlyKJCGGbhzqRQATW8a6+59vIf+MEdzfD+3333tVs32+rKsG1gHWAxLYWtn0ni021uGWAIB2wyDxSzc0AhcEcuUEIDqpcDC+IDCKvmUY40M6SEBjDX8h8izw2cQyleQV4eSHCWwneFwimmIb4ooGb2pGn5L6es5SJCioeFm6sUlwrONAx74H4psDCPm0FKDeBMVAyGh9e6J0Ku+z/+zrav/ToszEWjEC3lJK/P0hxWXtR6ZyE97A0RQC715gmZBCPMLKnCjKrjbDoYakpb3vy9tw4Ge/7Tf5DgJiHySEULrvl8mP00RS1VAAVDiDChwiUFuqZ5NI8P3XzLq37yn8mWrbAK2YXKajdqmmFCM0YnhJbOWiSaYeU0Dh/CwcM4fgKjNYqiHeDiS3DtNWgHyISqqCLgZhRhUoW6m4WrCjUBKldevfADf+Pyhbn973zn1ULLa8qozYpJ6ywEfEazLDENfYrTgU5BJNO5pyCUQEZTEJ82U5iO6ZYioI4w0KGGbjSEtx7MDgXk2Qd0eCgAoUIEZAlaQOm3adlLrBMgSHwmIzgS09EYlgli9wlQPGYGIvuaO6PV1Viz6GAdQs6k5gGdu+Hv/f1tX/VqzC2BZFeciiBCJSDuyAEaFFDp7awHo0g5yAxdoESqKhGAqQDZIUIgqUg4HFxcWnrjGy85ePjI+37P1k5uobHrIAOI8jyokoR+nDXYVyfDGYEukxqSnjh9+syNN770x/6eXHYpjNEkBkF3QtLAnOIYUMQzVXH00Jk7P/vYpz5zbM/uOHFkbjSaM08OUMfkatOsLi3Gtp1Xv/gll776a3nZ5YhAzkwJWh9osGwsCQdlwIsv3P5X33ToXe9WYbYxpffHdQyhFIam5DNPc/RDGKVkUZFKPRBCpvUyBtbW9n36U81odU5AK8mEFwiduJTpumBYdNKoB5rI8yT3Pzbvnag8B7k1yzX3k4LhOcIqgL8SiHDKCeEOtyij53za8VmB8VMpIqqlEVjPU06GcteV2ESVmUGJPGzvP378+n/4U9u/5jVY3AQ3REAVlEqxIhHwvoQButGjVGFrYaCyp3RSRglqfYUo8+1JwlkB1+4QQhps2rz9Lf/doSceP3rXx1rPC9IwpOa456k4ESVpDCMgUbA74uGmOBTd6iUX3fhNf2V47Y2IBGUEKeHuAS04djUIFcvLJ9/7zgN//Ae29/HBmfHO8SisG8Jby40mD2TKaje2RFucP7r7rsPve9fw0iuv/eZvT7fehlRRq30ViYBQCMs4fOxzP/XPdrnAgzKA0jwboU5aITToAblfevSQcVY1NJTRMlqJJJ4KR00FkVBruNplnDj+xbe9rXns0Z2E5jFhhaUGUVpTLDN46i4iBfvbKgZHjy6sndEy1/FcYJyq4xJSZvi/poW46bHRA7Ofga2WNNpZ2IAQUQBqU4Y4zHARBeCgsYkmB0YqX1g9dfVffePOr/kaLG0q+zwQEHh4lKEWUNDUUTR3UOAdDuzD3V8YHdi/fOrEWjeaXxhu2bWdVz0Pz78em+fhrD0HhIEq0Iorrd9ADlx04fN+6Afv/8lDx+67p21aNQgxyxrz5L4EHQK6TEkrRFpdFRwGmttfMveNr4cRjbiBCo9MEQMlQwMisDs/e/87fkM///GFJ/bOj22pXXCIKVtV8cw8doo0rSk777h68szp8fKBff7InvseemR464uv+O7vaq+6EuMVqIY2Aah16MIeffiz//Qnlj73uW1p4KNVF80OsvBIyYRcbMI58yUcBZ/0E0GUEkCJ/GO9u6kQUsdorPv3L+15eCe89TH7XKtcQ5kpFThzbQ+UtndqZIA+B3wGPuwZeIpaOHZOmu4FnX8Wa2QtlT6TAdgyMTZTb4unqt7WKIswWvAEgtdes+07vg1bt4SES4UlOtwpHiGIpjQDs0MFuTv07nc9fucn0hP7l44eHY7H49VVEGdSWh4OT88tLO+4YNcLXnjFa76e11/LbkxQmiaI3CEVoJcwLNik7OP25pue97q/fPDwkWNHj+9oWoZF2Lm9hIRGeJmOlAr6lxAJ+MFTJ/myl1/+pu/B9l3oBP04J6AW4UQDlyRHf+c9R9/5trj3rsVuZaum+WFLp4eb948AkkKRKwqG5sM03KJYG60d2X3vmf2P3fvYQ1e98Q2b77gDqSlhDPKou/fue37mXzR3fe6ShXn1VWnhZZyHmpk6sZASPrEvRECeEYlYhYxwplMZUxhnidMXUmxNvlVcHaDWJ12ngQlxeMklCBcQpYgb5d4Sz7Y9TOePKzFuDfZjEub3M2qcfMxnhhqpQOyaKPiEJ/QpaDDhXXgn6dS4u/r7/xe5/Cq0CVrG0AqEjGUk2SIY0QAYnek++MH7P/jH7YNfbJ/YO285uavqJodQHDE6haHD9jy4uvu+hz79icVXvPLC13+DXHARzTogqSIQGUwJZQJeU9ho4S9/w+jz944/9JEtFup2Ps+dWMcWJvewXKSecfelpZ233754821wKbF+H3aIwGhZkux7668d/rVf2bT3kasYbWqDzGYMU00qsJwdTE2DkBiPqNBmEB5hngJzZpe3zenR8uN/8qGHDh+87MDBna/9em6/kF2MP/+F3f/yp5tP/Mk1Wy8e+Diic3GVxBALQSSDhmj/gJywHlL1dOMAD5qLu8S6346Zdh4BOJkpUcYepxVNSjCchFDZ5+YBk3CqsDQESsbzHBRiZ45mTHctJ23J+qHkz0KmUyFCoJf5rclLrWPOnTRCA7Dc6CGP5730lZtf9pd8bgGSaks6pPR3zTLhDaGidvTwo7/6K/n9728f+uIOiYWGTaMWah5t06DrQmMe2NQoRPKJQ6c+tu/Yg19cObT/8m/7zvT8G2kZCU5lSA/VDZaeyYWXXfT1rz+4Z+/pL947HDZlLvNc6bVEeLDSnFa+lqAeHa22L75114tfXmIDmkOlvHoEJAC3Ux/7wOP/+d/uOnzwgoTB2JV0isFD3ZklalsOdMAhwWCp9ZsHEKoKy0vEVYvzex96YO9/+LdcPrnja79x9aHHHv2NX9FPfvyqLQtDP41wSpjXtkIT0cKlDv2WOkrMcITy6ZScHMzBXPsS54P8B+F9bzC0VqYq88KEJ7ZPVBggXSQoBd/fU/LEc0Aew/VEMk8+JCr9xTT2eYaWFzNl10ktN9YzdbE2MrAqeGwweOV3fw904BzSXQSsuIwS4EhkV2W399GH/9N/PP17v7dlbfmKxUEzXoEZPIkMkjSRQ0TDM+EajDyecywtLmL59Ofe/tYnTp56xY/8g7RlS0Yu8NueBcpEItjAZMvLv/rUxz5y+sF7NotrEOdCdiVnHdoj2CEgaBzucQKydN2NetMtMeV8KbOwSgCd4dGHHvilf7Pz6JHLhdF1SCkCkU1bRhLvOji1DNFaBjJTQiayQ1Skicj1Ibq3ZlcuDPcf2n/6bb+5sPvhk48dxKc/efX2zSmvmI9UEkJVmuwUEXFraFLpuGOmA/dMcMCggX2RrVqWY4r0pJQ6CDXQonYKtbLHct1UWSUegJcB1TLxx0mPEs8Zt3ePpY8y48NZtp5pRvVMOTknJA0y+3rnyygCYb4cHNxyi7/oRdLMiaHyNk69SggFTTt++KFH/8Mvrf7OO64azm9qko+Wkcr7lPaxeM5oG7iLMFJjjlFgbZRzKxdffunq9m0x6oQFOe0Olf52sPIQCTbPb7vt9iN3feTovsd2pLl0LrxjKoV2UgPMAISNx2o3bi64aO75N2BpE80jaQGHBunh4gHPh//rf8V991+QwPGqiEbN6SIK3ciEZ6kMdpbZTTgoUDLCAhKgKI200OgumZtbObj/xLveOj+3uGXrHG0sIowWEBihQrqijLB63xlgwYUHnlHA3lOwScyOg07gxGFQqlMYlOIA69Bk3wsvRuGVqh86oSd0DyBCwp36HBkD+kiOk4a6SE0iIiYRg9RdiPYial12/ak/bUvS1zEAoocEnH81TVP0TxhMqYU5IpqkC6vLK3/y4bW3XzP8K98FA1qxsMSq3mQITQJA2176zTXYmkSZtYWTJiBNK/y8QdW/whRSaIX8QwKkYmX5+Mc/+uAfvvuFC3OpWw0S2oajAeH5mqWFD//cT7/80os23f5ypDmUWlBtEmW4UySVSntqAIkINpQFdBkGpFTxxAQKp1TUQe+SDLqwaK5CVQtKg7BBEO3g8f/n3+T3vX+n+7wCZh5OUliR16qKnEuhzQHXEA3tx2gYNJOcxUCm0GHnFyfdtvexj33fD+DhPWAGx84ccCQW3HsBQkpwEM0QrZYRVvYCewYEVZTBQaQB2oDmMnEGq2dmeHiucm+njq/86q/c9cN/+2bFds+aR0AXC8k4gmRNnMmMe24ij2nxIzIbAT0zu5o35ZRNIMMtwnpyLzg0QppgCkEuWscaUWdWGqIpKna9kq8ASihdwiWKLkWpfsKLvmMA464YaecdJNYprUbh41unq1vZ5ugh/RcnamkTtxchHhLBc4yDlrtIi56/LUANTS7Y1mi7f++e3/qv+MyfQjN8pfdYUvLA0h0zz1XQUISSlEkKq5oGWvMmm3QGD3TBHM040hhN1A8PCVdm0hxiRz/8h3t/8Weva9nYGE1DlgpyY2wMmPfupsi7/9GPLd/1CUinnhVwekiHhKiUscpQVgqrWnZOiSnVlLwBm2CZQGTpSjELugST3DXeKBPCnZki6AxM+/7VL5x8+zu3nzi1g9KE010r0LVCPSvdypT+OaBeGr2ptkWFqVFCIqOBznX5YrOL9z/+yR/5O2t/9Adg6HiNntF1s1jg6uB7xE5tkdm6yn8BDTmQYREOKkXUQyxoBsRoz4O7f+afPfhf/v21eW27m6yupDaZZ08eLSBxeuUMKepRRFPrlAwCHigdsYTO1lyzMxstWEehCt1eYc/zWqZ3c6sUban1jH4QzCsvU/hEIXv9JINPGxS1uSe16pMaBCSQ2BBpVv1n9uvJ81Vn1Z8m8pHBp4Zv9VjrieheEX0jGWxsvJOme/d89hf/Ne69m3RdOwU3C4sIEQk3RFYlJcJtAlUvkJEJnFBAgSurMELnZqVEQFApHjSA8sR7f++hf/sLl9toG00lvOtmpidCyOS2qxtfeurEPT/1E8c//MfwTnKnZiSLZnM2R0/vM1HQnkjSVayjR+V5A7VXFoyeRqMQJGTLQqIbYdDs+bmfPvS237hgZXlX2yT3MPPw87NUifQtR58hJFF1sc4CoUkCrsLF8EvFLj3w2IM//7MP/P0fRc6T9M8BM5ibzajl1hyfGckgHixYwwm/tin6ucFMiSRosbxy+u2//cDf+2F+6L27Vo9saiJHsB26W4TBxtaNjRguLKaKuyoY7b6MFFIpIxEe5p7bVnKMzDsURELPpFEDrQihJQVUrMRETeEfSNMxDwJioeYpW8pWy0MlDymIMxhgQEdaH/Aj55RjEK10ilxEInHeL5z9Fef4KggVmbWQWevqeWpq3zuK+DVcAkPIxdk3f/6++3/iJ/GxP+EgITooC118iDqZrXM3ipRKYg9kbIEmkAJJS7vLyqR+IzIwB4CxmbmV6z72tt86+i9+/qInDi64OzwEWdmpdirgWDhijBWewrdEXP7EE4/+xE+c+K3f5Ooyg3CNKBQNEpKLaUeOisAQA7OjC3T9zHThg1IzMVcWyBhSSOoEptQ0gAFnlr/4Y3939V2/cfGZg5uwTKxl61xUpjNPZ3d4UkzZVoNi5dt0ZaJEdsuiBQ4GWm5yt1NlcPjg8Q9/6CP79l//9a/f+S3fjqYR8zriXo/qWl+LMKf3apqUwhdJILK6FbQNQotVnfnEJ/a+67e7z35i56F9W9WaRi13kGSkeOhgGF0nqTGHuYuBnSFnmlEChayhigsautGAUeRtWurQM61DzgBRBFbEq1CYralngN51yCPaPGzMJLBe2L1IqtWRUsIbhE67IsGiGAKEeEdtGBnjNYQnyykHsyDFOUmcz8kI+tRc4V+SUYYxjawK02kxmUWwdTu4+8G7f+Zndz308IXf+xbJY3ii0jQAiiaxcDeKktPxyKjkZCXaSiFgSDiVFIJujXfSNDhy6OFf+/WTv/ueq44fX6IyLEhjeFPE1FzdpZJ9gcTA/cLwuaNH9v77Xzrx4ANXfOf38PrrZWwQs8hIqiSgIqyPlRHI/SfTvrhWp5rMI+dokiCDnWkLdh2bQXzqzk//x19c/MLnLrPRglqMc6SBDpI7zf18o22pUIxGJYs1htATQiJDUsOUAzkg43GXmqRzQ47HS2y5suZ3f+7YgUMHP/qxK1704qWv+mpceQVSmnn2lY8toAXX1uMWSle2KFsDGjh+YvTxj+//8IfHD9zfPPH4ppXTW5th043VRVSU2cQ1FGOINUADiYbK8Zhtg2FLWumSVPgVo9Tx0jinwRxGeUhsbofsOrhBUwmh68SzxADdnHUanGtbDBt0IzaEW/USvehb5Qud5sgxZYnph6RIQS4FMYfEIjr3cbF3PKUwF+McBSeezVTC8yoPxYQEGqwN6Km6IihlBKWl7WKT9+w79Wu/tbJ779VveAOuv7HsrwzCAi5U8UnmM+MmPZDDRUI8GAxRFl0aDzbtmff9/sH3/O6Zz31u56nlOYo42cx5jCOyF5BmFJ51RMpBo0MgzNyszfjY8ZN/8N7dD+zd8dpv2P4Nr5OdW+FBajmQtAh3eSHLEBTeoL52N2lLUWtWinCqiHfY+8gjv/W20Z2f2vLInl3WLSlgHtoEGHCX6Ekuea7H8aKbgx4yLq0Jhoi38BTh0HBmj44iJWzMEghINCWtWu7yCTPuuuDMVdeML79s5403XXDttXrZpdi2HZKeROU7M1bcjfHIY8ce3fPYF+8ZP/LQ1j172kf2tGeWlwbDNjURSKLMcFuLJmur7CRGwXYROQLjPNRDOadbb+muvXZlbo5sFcmjILd9IKpHDuZ3v/0SZQMcc+TbXhI3vOCMtJniEogs7i18gGwPPYC7Pje/Ol7evku/8ZvGokYnECYoCPqeo4juWitUdLoX4tUAg+JCRIQ3KkGL3M1LrH3sTzft27+0spoKcet52KviSSSJwXOTSZ+PYWliEpVCs1Y0jO4IBNVECk2nGz0GKyEnEP6Cm/0lt139utfi+ucHFGMvjBWRav+mEtAGJBDuThcBLSMDzRAgFKt/+vFHPvS+uPPjgz0PbzFbTI2EKETCnblDJ43ATULF2yBM1oIuERKJWcEElTNdPp5j9YKL/YUv3PyKl130VV+FXbscgcIaVsquanQLDVYuw4iQSp1QAMVShcjx0CN73vt7K5+9s/n8ZxfPLG9rh4MwWgcCmiyKrFogoFMY9dkmcX2NPsWjTigkuhbUsaMLNaEwxC1MEgNCigdsDNWccMzsWOC06MKuizddeCl2bu82bZK5ubmlpblNm6gpm4tAwPFodfnkyfHymWZ13B46eubQgeOH9sXJYxer7BJqziISEHM27RDm7p0nQ1hC4RyZQ44QWIozilXBiqQ1SWXOyWFgkKohw25tG20wWmsiMtMR0bywdCaHJQ1hhEk3HoQN4ANwHiLjPKKebNKqSsARhS6ITg+iMCw1FimizO5U+oKeMJihpW0pqh5ZxBvm1mKXo1kdVea7J4kQz5pEwam6nCft5jks5ywSv1IGCGmcApqE0QtUUEwbEfEuK5N44/DM7onVM6PtOxZuvgXPv+HC625MN9+KCy6EAmLQqqZS8qSKIRGDZYTBgS/uXbl/99E9948//5nTu+/ebHkH03xUDoRKO5QaswBDokOQ0QJ0MaebBB0NBhgZGWjYMY50+TiTXnzl4g03tNdcufPmm3DdTdi6A0h1ztFLv4igwGOadoVhZRn79nb337f/wYftoYdH993Lw4cvnmsW6MhOQFRBCbMgmLQgb3s693OYxDV1tpIlLSugTpES7NCKx4vOwIbSwjyKRGdkMDoNbySLWA5btdz5qvsagbYdLC018wtOZjNRUUruRqPTp3x5ZegxR21EBnNaMqOyx6IOb5dqMdikzo3RJQGyl7E1aHLYSMZGCBo6I9zZYxlcIkQJFRd37TpK6ihFECmURgqp1onlIgnCMuUAZOscRiIgggYEYEE4FRA1iDto5ewITkbhKiqv0MxHOBrk6BqVgXlyBGUSt3457FQ819zUUxO91QkVRHCQRQgTZHEvjAGdJEAih1CF4ramuhaMzvTY8nhtbsvSVc8fXX/d+JJL5i/asbBj69yOrc3mzUiLwBCFfXDtzPjkkbWjh08efmLt6PGF3Y/xwYfWHvniHMZLm4ZCaEbDRDf4yDWgCWhgLdyFYwCIVNMyibFawJOpdEEJqBuzCSKa0ZqcGo1l89Lg+Vefvv4Gv+jSuW0XLG7fsbhtm2xaRNtW4Me4i5UzqydPnDl6ZO3oETvwRPvII+0je07seagZjXcsbhqSRYVQIiIY0rCwkKFyU0YFyJ3bJJ4/E9BOm0fsMchVqCaCTLDK5EZ6ESc0CQrNLImKFSJI6YQG5ECOyD1Eh2QSNJQBmCJ6CqOoDIksWO0ARIThESBVOvdGyTBkhzSlquIwJDhcXZgBGBJ6AA8IZZLOs4pIKcyxyooWuiuRokBjvQq0UBTu9IzCGyBaEUEFf1P1QSa4Z6+0pzGrbstpQx3m5XAx16KxwicraXwJOtAnO4qnpnqtxO+oXqJMoQIIqpERFKp7qdAaY7XoMYTLSIYng4dHo9WmGV6wfeGCne3Wrc3SojTzwQGDcMPa8vjEsdGJ46eOHFw7cngrmu2iW8vUrFh2F6pA4RlwJAZgRkErFMS454SVWmosbNCdqyQS7h3EQMAo0YKyBj/cjY8S4/mF4dadC9t3LmzdrpvmYzgMVUZwPLaVlbWTx1eOHBkdPYKTJ+e7bnvbbBY2lTuq7MzCYSlmRcKHqEMr2pNandskrvsy2Sar/5iRIqhiKDFhCK7m0mvvctIynjnM+onlieKl1L5ZEOcgbays5D1nwoS28sl1mUr1wJltsu7EnaWZYvRiJ+u4MGLmDc+K6dddXEyEZeJJ6reckcCNpxCX+YpzLURwkvcEZ3omT5KnmQyOlk8gQTGii+jMstko5y7niGCt4Ykom6RJdDBsk4iGa5l7jpg+vKi7Y4Ylkv0Azvr7MynTxzp2RUZ/GkdAtFPJEZ35uOvGXe5KM6FOkoiqNEmblFrVJJIiJEIx4Ro9ax/xnJWL88jc3nbdc6JQ/sxlljfWs0h32CPl1yuu9BtoAjvsWQ3gNt3xfHa45yY0UWcV2UqFfXKUzUpJVev+yhw46Tm79RvrL55NRA9Xr/3OEJKcqAqu25MR6MWSZtEoz5JacR3+m7J7cqaqxtnr78ORr5gDThsbY2OdbSQR5wKbzMRh5LMaVBTd2hm25ii8ievIm3m2FB82TGJj/RmX9NwSZ/GEVy3Es75Z5ubcn117mI7Qr89/yLMsFjNzeSTxleNL3TCJ/5ZdQo8Pm2By+z0XODcW/Tmwh6d4x8InsN5zfeWj8g2T+G/dJM4rdsNzwUziub7C2Yss5sFz5TOx4SU21lf2AD67HiLTmCTWhyvP2YVFHVJfZyGzVjGNoJ70kxsmsbG+4iWfGpM8l5aAGf3wc+fMfVkpzvoB8isYQMnGBthYG2vDS2ysv9he6s+1k7XhJTbWxtrwEhvrL/Ah/ee+NrzExtpYGyaxsTbWhklsrI21YRIba2NtmMTG2lgbJrGxNtaGSWysjbVhEhtrY22YxMbaWBsmsbE21oZJbKyNtWESG2tjbZjExtpY/59Z/y/0VJTjv15qoQAAAABJRU5ErkJggg==" alt="Logotipo CIIE-UE" width="262" height="111">
+      <div class="header-meta">Universidad Europea de Madrid · Curso 25/26</div>
+    </div>
+
+    <div class="hero-body">
+      <h1>Centro de Investigación e Innovación Educativa (CIIE-UE)</h1>
+      <p class="hero-lead">Informe de acciones y resultados – Curso 25/26</p>
+    </div>
+  </header>
+
+  <section class="section-open section-first" id="mapa">
+    <h2 class="sec">Ocho acciones del curso, con sus datos principales</h2>
+    <div class="map" id="map"></div>
+  </section>
+
+  <section class="section-open" id="asesoria">
+    <div class="sec-tag">Acción 1 · Asesoría metodológica y estadística</div>
+    <h2 class="sec">Un servicio transversal que los usuarios recomiendan</h2>
+    <p class="sec-lead">Servicio de apoyo a la actividad investigadora de la Universidad Europea. Resuelve dudas de diseño metodológico y análisis estadístico, desde artículos y tesis hasta proyectos. Recibió 55 solicitudes de todas las facultades: Educación concentra 14, seguida de Veterinaria y Psicología con 4 cada una.</p>
+
+    <div class="card-stack">
+      <div class="grid2">
+        <div class="card">
+          <h3>Para qué se pide asesoría</h3>
+          <p class="note">Porcentaje sobre 55 solicitudes</p>
+          <div id="tipos" class="bars bars-pct"></div>
+        </div>
+        <div class="card">
+          <h3>Capacidad de respuesta y valoración</h3>
+          <p class="note">Satisfacción de 4,9 a 5,0 sobre 5 en todos los indicadores</p>
+          <div class="stats">
+            <div class="stat"><b class="num">4 días</b><span>tiempo medio de respuesta</span></div>
+            <div class="stat"><b class="num">51 min</b><span>duración media de cada asesoría</span></div>
+            <div class="stat stat-blue"><b class="num">100</b><span>Net Promoter Score</span></div>
+            <div class="stat"><b class="num">74 %</b><span>tasa de respuesta a la encuesta</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="perfil">
+        <h3>Perfil de los solicitantes</h3>
+        <p class="note">Titulación, acreditación y dedicación semanal de quienes pidieron asesoría</p>
+        <div class="donuts">
+          <div class="donut-item">
+            <h4>Titulación</h4>
+            <div class="donut" style="background:conic-gradient(var(--color-red) 0 76%, #F4CED2 0)" role="img" aria-label="76 % doctores, 24 % no doctores"><b class="num">76 %</b></div>
+            <ul>
+              <li><i class="sw" style="background:var(--color-red)"></i>Doctores (76 %)</li>
+              <li><i class="sw" style="background:#F4CED2"></i>No doctores (24 %)</li>
+            </ul>
+          </div>
+          <div class="donut-item">
+            <h4>Doctores</h4>
+            <div class="donut donut-blue" style="background:conic-gradient(var(--color-blue) 0 45%, var(--color-bar-unregistered) 0)" role="img" aria-label="45 % acreditados, 55 % no acreditados"><b class="num">45 %</b></div>
+            <ul>
+              <li><i class="sw" style="background:var(--color-blue)"></i>Acreditados (45 %)</li>
+              <li><i class="sw" style="background:var(--color-bar-unregistered)"></i>No acreditados (55 %)</li>
+            </ul>
+          </div>
+          <div class="donut-item">
+            <h4>Dedicación</h4>
+            <div class="donut" style="background:conic-gradient(var(--color-red) 0 93%, var(--color-bar-unregistered) 0)" role="img" aria-label="93 % con 30 horas semanales o más, 7 % otras dedicaciones"><b class="num">93 %</b></div>
+            <ul>
+              <li><i class="sw" style="background:var(--color-red)"></i>30 h semanales o más (93 %)</li>
+              <li><i class="sw" style="background:var(--color-bar-unregistered)"></i>Otras dedicaciones (7 %)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note" style="margin:18px 0 0">Tres de cada cuatro solicitantes son doctores y el 93 % tiene una dedicación de 30 horas semanales o más.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-open" id="blog">
+    <div class="sec-tag">Acción 2 · Blog científico</div>
+    <h2 class="sec">La audiencia del blog crece mes a mes</h2>
+    <p class="sec-lead">Reseñas divulgativas, escritas por personas expertas, de artículos científicos de investigadores de la Universidad. Se publican en el blog del CIIE en OpenEdition Hypotheses. Pasó de 5,7 a 16,4 visitas al mes.</p>
+
+    <div class="card-stack">
+      <div class="card">
+        <h3>Visitas mensuales al blog</h3>
+        <p class="note">248 visitas y 663 páginas leídas entre febrero de 2025 y octubre de 2026, con lectores en 13 países. <a class="ext-link" href="https://ciie-ue.hypotheses.org/" target="_blank" rel="noopener noreferrer">Visitar el blog</a></p>
+        <div class="scroll"><div class="months" id="months"></div></div>
+        <div class="legend-inline">
+          <span><i class="sw" style="background:var(--color-blue)"></i>feb–oct 2025 (media 5,7)</span>
+          <span><i class="sw" style="background:var(--color-red)"></i>nov 2025–oct 2026 (media 16,4)</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Tres artículos reúnen el 76 % de las lecturas</h3>
+        <p class="note">Visitas por artículo; 85 en total</p>
+        <div id="arts" class="bars"></div>
+      </div>
+
+      <div class="card">
+        <h3>Cómo llega y cuándo se lee el blog</h3>
+        <p class="note">79 % por enlace directo, 19 % desde Google y 3 % desde otras webs. El martes concentra el 31 % de las visitas y el 80 % se lee desde ordenador.</p>
+        <div id="dias"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-open" id="boletin-sec">
+    <div class="sec-tag">Acción 3 · Boletín del CIIE</div>
+    <h2 class="sec">Un boletín que se lee casi hasta el final</h2>
+    <p class="sec-lead">Herramienta de difusión de la actividad investigadora de la Universidad. Reúne convocatorias competitivas, congresos, cursos de formación, recursos metodológicos, herramientas de inteligencia artificial aplicadas a la investigación y buenas prácticas, con un enfoque divulgativo y riguroso. Se publica en formato Sway.</p>
+
+    <div class="card" id="boletin">
+      <h3>Boletín del CIIE en Sway</h3>
+      <p class="note">Edición de 4 de junio de 2026, 183 vistas de página, 2 minutos de tiempo promedio. <a class="ext-link" href="https://sway.cloud.microsoft/gyK9vCKHPZaCMzuk?ref=Link&amp;loc=mysways" target="_blank" rel="noopener noreferrer">Abrir el boletín en Sway</a></p>
+      <div class="stack" id="stack"></div>
+      <div class="legend-inline" id="stackleg"></div>
+      <div class="stats" style="margin-top:16px">
+        <div class="stat"><b class="num">49 %</b><span>promedio de finalización</span></div>
+        <div class="stat stat-blue"><b class="num">55 %</b><span>de las visitas con lectura rápida o profunda</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-open" id="recursos">
+    <div class="sec-tag">Acción 4 · Recursos docentes abiertos</div>
+    <h2 class="sec">Materiales abiertos que ya se ven y se descargan</h2>
+    <p class="sec-lead">Guías y videotutoriales de análisis estadístico con JASP, depositados en Zenodo con DOI para que estudiantes, profesorado e investigadores puedan citarlos y reutilizarlos. Los cinco recursos acumulan 739 visualizaciones y 535 descargas.</p>
+
+    <div class="card-stack">
+      <div class="card">
+        <h3>Visualizaciones y descargas por recurso</h3>
+        <p class="note">Recursos docentes de análisis estadístico, en Zenodo</p>
+        <div class="scroll"><div class="pairs" id="pairs"></div></div>
+        <div class="legend-inline">
+          <span><i class="sw" style="background:var(--color-red)"></i>Visualizaciones</span>
+          <span><i class="sw" style="background:var(--color-blue)"></i>Descargas</span>
+        </div>
+      </div>
+
+      <div class="card" id="enlaces">
+        <h3>Guías y videotutoriales en Zenodo</h3>
+        <p class="note">Cinco recursos con DOI, de acceso abierto</p>
+        <ul class="refs refs-grid">
+          <li><strong>ANOVA</strong>Romero-Ferreiro, V. y Jiménez-García, E. (2026). Guía: Análisis de la varianza (ANOVA) de una vía en JASP. Universidad Europea. <a href="https://doi.org/10.5281/zenodo.19183368" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.19183368</a></li>
+          <li><strong>Chi-cuadrado</strong>Romero-Ferreiro, V. y Jiménez-García, E. (2026). Guía: Prueba de independencia chi-cuadrado en JASP. Universidad Europea. <a href="https://doi.org/10.5281/zenodo.19183516" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.19183516</a></li>
+          <li><strong>Correlación</strong>Romero-Ferreiro, V. y Jiménez-García, E. (2026). Guía: Correlación de Pearson en JASP. Universidad Europea. <a href="https://doi.org/10.5281/zenodo.19183628" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.19183628</a></li>
+          <li><strong>t de Student, muestras relacionadas</strong>Romero-Ferreiro, V. y Jiménez-García, E. (2026). Guía: t de Student para muestras relacionadas en JASP. Universidad Europea. <a href="https://doi.org/10.5281/zenodo.19183710" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.19183710</a></li>
+          <li><strong>t de Student, muestras independientes</strong>Romero-Ferreiro, V. y Jiménez-García, E. (2026). Guía: t de Student para muestras independientes en JASP. Universidad Europea. <a href="https://doi.org/10.5281/zenodo.19183781" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.19183781</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-open" id="fichas">
+    <div class="sec-tag">Acción 5 · Fichas de TFM con bases de datos públicas</div>
+    <h2 class="sec">Un banco de propuestas para TFM cuantitativos</h2>
+    <p class="sec-lead">Banco de propuestas de TFM cuantitativos para titulaciones del ámbito educativo, elaboradas a partir de bases de datos públicas: PISA, TALIS y estadísticas del Ministerio de Educación y Formación Profesional.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Qué incluye cada ficha</h3>
+        <p class="note">Siete apartados, con versión completa para el tutor y versión simplificada para el estudiante</p>
+        <ol class="steps">
+          <li>Título provisional</li>
+          <li>Justificación</li>
+          <li>Objetivo</li>
+          <li>Preguntas e hipótesis</li>
+          <li>Variables</li>
+          <li>Muestra y fuente</li>
+          <li>Plan de análisis</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h3>Titulaciones del ámbito educativo</h3>
+        <p class="note">Se han realizado fichas para estos másteres y otras titulaciones afines</p>
+        <div class="stats">
+          <div class="stat"><b class="num">8</b><span>fichas del Máster Universitario en Innovación Educativa</span></div>
+          <div class="stat stat-blue"><b class="num">9</b><span>fichas del Máster Universitario en Necesidades Educativas Especiales</span></div>
+        </div>
+        <p class="note" style="margin:14px 0 0">También del Máster Universitario en Formación del Profesorado y de otras titulaciones afines.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-open" id="ia">
+    <div class="sec-tag">Acciones 6, 7 y 8</div>
+    <h2 class="sec">Calidad de las pruebas con IA, evaluación ética y formación docente</h2>
+
+    <div class="three" style="margin-top:14px">
+      <div class="card">
+        <h3>6 · Grupo de expertos en pruebas con IA</h3>
+        <p class="note">Marco metodológico para evaluar la calidad lingüística y psicométrica de pruebas generadas con IA</p>
+        <ol class="steps">
+          <li>Dossier de indicadores</li>
+          <li>Prompts anti-sesgo</li>
+          <li>Bases de datos</li>
+          <li>Sistema en R</li>
+          <li>Diseño de validación</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h3>7 · Comisión de investigación</h3>
+        <p class="note">Evaluación ética de proyectos de innovación educativa de estudiantes y profesorado</p>
+        <div class="stat stat-blue"><b class="num">146</b><span>proyectos evaluados, con informes de requerimiento cuando faltaba documentación</span></div>
+      </div>
+
+      <div class="card">
+        <h3>8 · Formación del profesorado</h3>
+        <p class="note">Dos acciones formativas: «Big Data en la Educación» (170 docentes) y «Cómo elegir la prueba estadística adecuada» (150 participantes). Satisfacción del taller, sobre 5 (82 respuestas):</p>
+        <div id="forma" class="bars bars-score"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE Y METODOLOGÍA PLEGABLE UNIFICADO (ANTRACITA #1E1E1E) -->
+  <details class="foot">
+    <summary>Fuentes y metodología</summary>
+    <ul>
+      <li><strong>Fuentes.</strong> Memoria de actividades del CIIE, curso 25/26. Asesoría: datos recogidos a 24 de julio de 2026. Blog: Matomo de OpenEdition (sitio ciie-ue). Boletín: analíticas de Sway. Recursos: Zenodo.</li>
+      <li><strong>Nota sobre formación docente.</strong> Las 320 personas son la suma de ambas acciones formativas; no se ha comprobado si alguien asistió a las dos.</li>
+    </ul>
+
+    <div class="footer-bottom-bar">
+      <span>Universidad Europea de Madrid · Centro de Investigación e Innovación Educativa (CIIE-UE)</span>
+      <span>Informe de acciones y resultados · Curso 25/26</span>
+    </div>
+  </details>
+</div>
+
+<script>
+const fmt = n => String(n).replace('.', ',');
+
+/* 1. Mapa de líneas */
+const lines = [
+  ['01','Asesoría metodológica y estadística','55','solicitudes','Respuesta media en 4 días y satisfacción de 4,9 a 5,0.',false],
+  ['02','Blog científico en Hypotheses','×2,9','visitas/mes','De 5,7 a 16,4 visitas al mes, con lectores en 13 países.',false],
+  ['03','Boletín del CIIE','183','vistas','Se lee hasta el final el 49 % de las veces.',true],
+  ['04','Recursos docentes abiertos','5','recursos con DOI','739 visualizaciones y 535 descargas en Zenodo.',true],
+  ['05','Fichas de TFM con bases públicas','3','fuentes','PISA, TALIS y estadísticas oficiales del Ministerio de Educación y Formación Profesional.',false],
+  ['06','Pruebas de evaluación apoyadas por IA','5','entregables','Dossier, prompts, bases de datos, sistema en R y diseño de validación.',false],
+  ['07','Comisión de investigación','146','proyectos','Evaluación ética de proyectos de innovación educativa.',true],
+  ['08','Formación del profesorado','320','participantes','Big Data en la Educación y elección de la prueba estadística; satisfacción global de 4,88.',true]
+];
+document.getElementById('map').innerHTML = lines.map(l =>
+  `<article class="tc${l[5]?' alt':''}"><div class="n">${l[0]}</div><h3>${l[1]}</h3><div class="big num">${l[2]}<small>${l[3]}</small></div><p>${l[4]}</p></article>`).join('');
+
+/* helper: barras horizontales con clases oficiales uem.css (.bar, .lbl, .trk, .fill, .val) */
+function hbars(id, rows, max, topN, suffix){
+  document.getElementById(id).innerHTML = rows.map((r,i) =>
+    `<div class="bar${i<topN?' top':''}"><span class="lbl">${r[0]}</span><span class="trk"><span class="fill" style="width:${(r[1]/max*100).toFixed(1)}%"></span></span><span class="val num">${r[2]||fmt(r[1])}${suffix||''}</span></div>`).join('');
+}
+hbars('tipos', [['Artículos científicos',44],['Proyectos de investigación',13],['Tesis doctorales',13],['Diseño metodológico',13],['Acceso a bases de datos',7],['Congresos',5],['Proyectos de innovación docente',4],['Instrumentos de medida',2]], 44, 1, ' %');
+hbars('arts', [['¿Estamos preparados para la IA en las aulas?',23],['Desinformación climática y pensamiento crítico',23],['El modelo híbrido puesto a prueba (blended learning)',19],['Actividad física y comida saludable',6],['Jugar para aprender: gamificación en EF',5],['La tecnología en las aulas: ¿aliada o amenaza?',5],['«Te espero desde media hora»: el tiempo en ELE',4]], 23, 3, '');
+hbars('forma', [['Satisfacción global','4,88'],['Formador','4,95'],['Organización','4,93'],['Adecuación al perfil','4,90'],['Utilidad práctica','4,88']].map(r=>[r[0],parseFloat(r[1].replace(',','.')),r[1]]), 5, 5, '');
+
+/* 2. Visitas mensuales */
+const months = ['feb 25','mar','abr','may','jun','jul','ago','sep','oct','nov','dic','ene 26','feb','mar','abr','may','jun','jul','ago','sep','oct'];
+const visits = [13,3,1,1,6,4,3,12,8,11,14,2,47,15,20,37,20,5,1,15,10];
+document.getElementById('months').innerHTML = visits.map((v,i) =>
+  `<div class="col${i>=9?' new':''}"><b class="num">${v}</b><div class="vbar" style="height:${(v/47*170).toFixed(1)}px"></div><span>${months[i]}</span></div>`).join('');
+
+/* 3. Boletín: profundidad de lectura */
+const depth = [['Miró',83,'var(--color-bar-unregistered)','var(--color-anthracite)'],['Lectura rápida',53,'var(--color-red-accessible)','var(--color-white)'],['Lectura profunda',47,'var(--color-blue)','var(--color-white)']];
+document.getElementById('stack').innerHTML = depth.map(d => `<div style="flex:${d[1]};background:${d[2]};color:${d[3]}">${d[1]}</div>`).join('');
+document.getElementById('stackleg').innerHTML = depth.map(d => `<span><i class="sw" style="background:${d[2]}"></i>${d[0]}</span>`).join('');
+
+/* 4. Días y canales */
+document.getElementById('dias').innerHTML = '<div class="three" style="gap:24px"><div id="dd"></div><div id="cc"></div><div id="cp"></div></div>';
+const days = [['Lunes',42],['Martes',77],['Miércoles',48],['Jueves',43],['Viernes',28],['Sábado',3],['Domingo',7]];
+document.getElementById('dd').innerHTML = '<div class="sub-head">Visitas por día</div><div class="bars bars-days">' + days.map(d =>
+  `<div class="bar${d[0]==='Martes'?' top':''}"><span class="lbl">${d[0]}</span><span class="trk"><span class="fill" style="width:${(d[1]/77*100).toFixed(1)}%"></span></span><span class="val num">${d[1]}</span></div>`).join('') + '</div>';
+const ch = [['Enlace directo (correo, Teams, LinkedIn)',195],['Google',46],['Otras webs',7]];
+document.getElementById('cc').innerHTML = '<div class="sub-head">Canal de llegada</div><div class="bars bars-channels">' + ch.map((d,i) =>
+  `<div class="bar${i===0?' top':''}"><span class="lbl">${d[0]}</span><span class="val num">${d[1]}</span><span class="trk"><span class="fill" style="width:${(d[1]/195*100).toFixed(1)}%"></span></span></div>`).join('') + '</div>';
+document.getElementById('cp').innerHTML = '<div class="sub-head">Alcance</div><div class="stats"><div class="stat"><b class="num">13</b><span>países con lectores</span></div><div class="stat stat-blue"><b class="num">2:28</b><span>minutos y segundos por visita</span></div></div>';
+
+/* 5. Recursos en Zenodo */
+const rec = [['ji-cuadrado',128,243],['Correlación',127,65],['t de Student independientes',99,46],['t de Student relacionadas',274,107],['ANOVA',111,74]];
+document.getElementById('pairs').innerHTML = rec.map(r =>
+  `<div class="pair"><div class="pbars"><i style="height:${(r[1]/274*130).toFixed(1)}px;background:var(--color-red)"><em class="num">${r[1]}</em></i><i style="height:${(r[2]/274*130).toFixed(1)}px;background:var(--color-blue)"><em class="num">${r[2]}</em></i></div><span>${r[0]}</span></div>`).join('');
+</script>
+</body>
+</html>
