@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mejoras Visuales · Informes UEM (Antes y Después)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #FF3228;
+    --dark: #1E1E1E;
+    --blue: #2D41B4;
+    --bg: #F6F6F6;
+    --border: #E2E2E2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    background: #FFFFFF;
+    color: var(--dark);
+    padding: 32px 24px 64px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  header {
+    background: var(--dark);
+    color: #FFF;
+    padding: 28px 34px;
+    border-radius: 6px;
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  header p {
+    color: #CCCCCC;
+    font-size: 15px;
+    margin-top: 4px;
+  }
+  .badge-header {
+    background: var(--red);
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .item {
+    margin-bottom: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+    break-inside: avoid;
+  }
+  .item:last-child {
+    border-bottom: none;
+  }
+  .item-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .num {
+    background: var(--red);
+    color: #FFF;
+    font-weight: 700;
+    font-size: 14px;
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .item-head h2 {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+  .pitch {
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .comp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .comp-grid { grid-template-columns: 1fr; }
+  }
+  .shot {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px;
+  }
+  .shot.after {
+    border: 2px solid var(--dark);
+    background: #FFF;
+  }
+  .shot-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .shot.before .shot-label {
+    background: #E5E5E5;
+    color: #555;
+  }
+  .shot.after .shot-label {
+    background: var(--dark);
+    color: #FFF;
+  }
+  .shot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  @media print {
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    body {
+      padding: 0;
+      max-width: 100%;
+    }
+    header {
+      margin-bottom: 20px;
+      padding: 16px 24px;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+    .comp-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 20px !important;
+    }
+    .shot {
+      padding: 12px;
+      border-radius: 6px;
+    }
+    .shot img {
+      width: 100%;
+      height: auto;
+      max-height: 125mm;
+      object-fit: contain;
+    }
+    .item {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .item + .item {
+      break-before: page;
+      page-break-before: always;
+    }
+    .item-head h2 {
+      font-size: 20px;
+    }
+    .pitch {
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+  }
+  @page {
+    size: A4 landscape;
+    margin: 10mm 12mm;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Propuesta de Mejoras Visuales · Informes UEM</h1>
+    <p>Filiación Institucional y Publicaciones 2026 (100 % del contenido original intacto)</p>
+  </div>
+  <span class="badge-header">Antes vs. Después</span>
+</header>
+
+<section class="item">
+  <div class="item-head"><span class="num">1</span><h2>Cifras clave en una sola línea (Publicaciones)</h2></div>
+  <p class="pitch">Integra el símbolo «%» junto a la cifra para una lectura inmediata, limpia y sin saltos de línea.</p>
+  <div class="comp-grid">
+    <div class="shot before"><span class="shot-label">Antes</span><img src="capturas/1_pub_kpi_antes.png" alt="Antes"></div>
+    <div class="shot after"><span class="shot-label">Después</span><img src="capturas/1_pub_kpi_despues.png" alt="Después"></div>
+  </div>
+</section>
+
+<section class="item">
+  <div class="item-head"><span class="num">2</span><h2>Tabla estadística completa y contraste nítido (Filiación)</h2></div>
+  <p class="pitch">Muestra toda la tabla de un vistazo sin barras de desplazamiento ni cortes de texto, reforzando la nitidez de las barras y las insignias.</p>
+  <div class="comp-grid">
+    <div class="shot before"><span class="shot-label">Antes</span><img src="capturas/8_fil_tabla_antes.png" alt="Antes"></div>
+    <div class="shot after"><span class="shot-label">Después</span><img src="capturas/8_fil_tabla_despues.png" alt="Después"></div>
+  </div>
+</section>
+
+<section class="item">
+  <div class="item-head"><span class="num">3</span><h2>Escala de color ordenada por impacto en cuartiles (Publicaciones)</h2></div>
+  <p class="pitch">Ordena los cuartiles (Q1 a Q4) en una degradación azul intuitiva de mayor a menor impacto con las cifras visibles en cada tramo.</p>
+  <div class="comp-grid">
+    <div class="shot before"><span class="shot-label">Antes</span><img src="capturas/2_pub_cuartiles_antes.png" alt="Antes"></div>
+    <div class="shot after"><span class="shot-label">Después</span><img src="capturas/2_pub_cuartiles_despues.png" alt="Después"></div>
+  </div>
+</section>
+
+<section class="item">
+  <div class="item-head"><span class="num">4</span><h2>Visibilidad completa en barras anuales (Filiación)</h2></div>
+  <p class="pitch">Muestra directamente todos los porcentajes en cada tramo —también en móvil— con contraste de lectura mejorado.</p>
+  <div class="comp-grid">
+    <div class="shot before"><span class="shot-label">Antes</span><img src="capturas/7_fil_apiladas_antes.png" alt="Antes"></div>
+    <div class="shot after"><span class="shot-label">Después</span><img src="capturas/7_fil_apiladas_despues.png" alt="Después"></div>
+  </div>
+</section>
+
+<section class="item">
+  <div class="item-head"><span class="num">5</span><h2>Reconocimiento visual de empates (Publicaciones)</h2></div>
+  <p class="pitch">Destaca por igual las dos temáticas colíderes empatadas en primer lugar con 8 capítulos.</p>
+  <div class="comp-grid">
+    <div class="shot before"><span class="shot-label">Antes</span><img src="capturas/4_pub_empate_antes.png" alt="Antes"></div>
+    <div class="shot after"><span class="shot-label">Después</span><img src="capturas/4_pub_empate_despues.png" alt="Después"></div>
+  </div>
+</section>
+
+<section class="item">
+  <div class="item-head"><span class="num">6</span><h2>Coherencia numérica en indicadores (Filiación)</h2></div>
+  <p class="pitch">Unifica todas las cifras con coma decimal según la norma del español para dar rigor y consistencia a todo el informe.</p>
+  <div class="comp-grid">
+    <div class="shot before"><span class="shot-label">Antes</span><img src="capturas/6_fil_kpi_antes.png" alt="Antes"></div>
+    <div class="shot after"><span class="shot-label">Después</span><img src="capturas/6_fil_kpi_despues.png" alt="Después"></div>
+  </div>
+</section>
+
+<section class="item">
+  <div class="item-head"><span class="num">7</span><h2>Lectura más cómoda en la conclusión principal (Filiación)</h2></div>
+  <p class="pitch">Acota el ancho de línea y amplía el cuerpo del texto para que el mensaje clave se lea sin fatiga visual.</p>
+  <div class="comp-grid">
+    <div class="shot before"><span class="shot-label">Antes</span><img src="capturas/5_fil_callout_antes.png" alt="Antes"></div>
+    <div class="shot after"><span class="shot-label">Después</span><img src="capturas/5_fil_callout_despues.png" alt="Después"></div>
+  </div>
+</section>
+
+<section class="item">
+  <div class="item-head"><span class="num">8</span><h2>Diseño más limpio sin «cajas dentro de cajas» (Filiación y Publicaciones)</h2></div>
+  <p class="pitch">Elimina marcos redundantes y equilibra el uso del rojo para que destaquen únicamente los datos clave.</p>
+  <div class="comp-grid">
+    <div class="shot before"><span class="shot-label">Antes</span><img src="capturas/9_fil_cajas_antes.png" alt="Antes"></div>
+    <div class="shot after"><span class="shot-label">Después</span><img src="capturas/9_fil_cajas_despues.png" alt="Después"></div>
+  </div>
+</section>
+
+</body>
+</html>

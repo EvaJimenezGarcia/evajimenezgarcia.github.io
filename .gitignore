@@ -1,0 +1,6 @@
+# Borradores, archivos fuente y respaldos locales (no publicar en GitHub Pages)
+_borradores/
+version-anterior.html
+*.bak.html
+.DS_Store
+Thumbs.db
