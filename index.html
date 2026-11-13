@@ -8,28 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/uem.css">
-<style>
-  .portal-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: auto;
-    padding-top: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--color-blue);
-    text-decoration: none;
-  }
-  .portal-link:hover {
-    color: var(--color-red-accessible);
-    text-decoration: underline;
-  }
-  .portal-path {
-    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-    font-size: 13px;
-    color: var(--color-text-light);
-  }
-</style>
 </head>
 <body>
 
@@ -60,63 +38,73 @@
           <path d="M267.67,79.42c-0.7,2.88-3.38,4.86-6.39,4.86c-1.75,0-3.29-0.67-4.41-1.79l10.65-6.15c0,0,0,0,0,0.01l5.02-2.91c-1.61-4.78-5.96-8.03-11.26-8.03c-6.79,0-11.94,5.25-11.94,12.23s5.15,12.18,11.94,12.18c5.76,0,10.64-3.75,11.87-9.21L267.67,79.42z M254.94,77.63c0-3.87,2.71-6.7,6.35-6.7c1.51,0,2.88,0.51,3.95,1.38l-10.29,5.65C254.95,77.86,254.94,77.75,254.94,77.63z" />
         </g>
       </svg>
-      <div class="header-meta">Portal de Informes · Repositorio Unificado</div>
+      <div class="header-meta">Portal de Informes · Eva Jiménez</div>
     </div>
 
     <div class="hero-body">
       <h1>Informes y publicaciones</h1>
       <div class="hero-faculty">Facultad de Ciencias Jurídicas, Educación y Humanidades</div>
       <p class="hero-lead">
-        Índice central de los tres informes web institucionales publicados bajo un único sistema de diseño (<code>assets/uem.css</code>).
+        Espacio de consulta de los informes de producción científica, evaluación institucional e innovación educativa elaborados por <b>Eva Jiménez</b> en la Universidad Europea de Madrid.
       </p>
     </div>
   </header>
 
   <section class="section-open">
     <h2 class="sec">Informes publicados</h2>
-    <div class="cards">
-      <article class="tc full">
-        <div class="tc-h">
+    <div class="portal-grid">
+      <article class="portal-card">
+        <div class="portal-card-top">
           <span class="tc-num">1</span>
-          <h3>Filiación institucional (2023–2026)</h3>
           <span class="pill">2023–2026</span>
         </div>
-        <p class="idea">Evaluación de la normativa de filiación institucional en 1.091 registros de producción científica de la Facultad.</p>
-        <div class="portal-path">/filiacion/</div>
-        <a class="portal-link" href="filiacion/">Abrir informe →</a>
+        <h3 class="portal-card-title">Filiación institucional</h3>
+        <p class="portal-desc">Evaluación del cumplimiento de la normativa de filiación institucional en la producción científica de la Facultad.</p>
+        <div class="portal-metrics">
+          <span class="portal-metric"><strong>1.091</strong> registros</span>
+          <span class="portal-metric metric-accent"><strong>47,8 % → 58,6 %</strong> correcta</span>
+        </div>
+        <a class="portal-cta" href="filiacion/">
+          <span>Abrir informe</span>
+          <span class="portal-cta-arrow" aria-hidden="true">→</span>
+        </a>
       </article>
 
-      <article class="tc">
-        <div class="tc-h">
+      <article class="portal-card">
+        <div class="portal-card-top">
           <span class="tc-num">2</span>
-          <h3>Publicaciones 2026</h3>
           <span class="pill">Año 2026</span>
         </div>
-        <p class="idea">Producción científica de 2026 organizada en artículos (47) y capítulos de libro (34) con referencias APA.</p>
-        <div class="portal-path">/publicaciones/2026/</div>
-        <a class="portal-link" href="publicaciones/2026/">Abrir informe →</a>
+        <h3 class="portal-card-title">Publicaciones 2026</h3>
+        <p class="portal-desc">Análisis de la producción científica de 2026 por áreas temáticas, cuartiles de calidad y referencias bibliográficas en formato APA.</p>
+        <div class="portal-metrics">
+          <span class="portal-metric"><strong>47</strong> artículos</span>
+          <span class="portal-metric metric-accent"><strong>34</strong> capítulos</span>
+        </div>
+        <a class="portal-cta" href="publicaciones/2026/">
+          <span>Abrir informe</span>
+          <span class="portal-cta-arrow" aria-hidden="true">→</span>
+        </a>
       </article>
 
-      <article class="tc">
-        <div class="tc-h">
+      <article class="portal-card">
+        <div class="portal-card-top">
           <span class="tc-num">3</span>
-          <h3>Informe de acciones y resultados CIIE-UE</h3>
           <span class="pill">Curso 25/26</span>
         </div>
-        <p class="idea">Balance de las ocho líneas de actuación del Centro de Investigación e Innovación Educativa (CIIE-UE): asesoría metodológica, blog científico, boletín, recursos abiertos en Zenodo, fichas de TFM, evaluación con IA, comisión de investigación y formación del profesorado.</p>
-        <div class="portal-path">/ciie-ue/</div>
-        <a class="portal-link" href="ciie-ue/">Abrir informe →</a>
+        <h3 class="portal-card-title">Acciones y resultados CIIE-UE</h3>
+        <p class="portal-desc">Balance del Centro de Investigación e Innovación Educativa en asesoría metodológica, difusión, recursos abiertos, evaluación e investigación.</p>
+        <div class="portal-metrics">
+          <span class="portal-metric"><strong>8</strong> líneas de actuación</span>
+          <span class="portal-metric metric-accent"><strong>55</strong> asesorías</span>
+        </div>
+        <a class="portal-cta" href="ciie-ue/">
+          <span>Abrir informe</span>
+          <span class="portal-cta-arrow" aria-hidden="true">→</span>
+        </a>
       </article>
     </div>
   </section>
-
-  <details class="foot">
-    <summary>Estructura del sitio y notas técnicas</summary>
-    <ul>
-      <li><strong>Repositorio único:</strong> Todas las páginas viven en carpetas en minúsculas (<code>kebab-case</code>) con su propio <code>index.html</code>.</li>
-      <li><strong>Estilo compartido:</strong> Los informes enlazan a una única hoja de estilos en <code>assets/uem.css</code> según su nivel de anidación.</li>
-    </ul>
-  </details>
 </div>
 
 </body>

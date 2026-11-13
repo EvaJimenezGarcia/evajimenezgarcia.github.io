@@ -8,27 +8,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/uem.css">
-<style>
-  .portal-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: auto;
-    padding-top: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--color-blue);
-    text-decoration: none;
-  }
-  .portal-link:hover {
-    color: var(--color-red-accessible);
-    text-decoration: underline;
-  }
-</style>
 </head>
 <body>
 
 <div class="page-wrap">
+  <nav class="back-bar" aria-label="Navegación de retorno">
+    <a class="btn-back" href="../">
+      <span class="btn-back-arrow" aria-hidden="true">←</span>
+      <span>Volver al portal principal</span>
+    </a>
+  </nav>
+
   <header class="header-hero">
     <div class="header-top">
       <svg class="logo-svg" viewBox="0 0 378.14 103.96" role="img" aria-label="Universidad Europea">
@@ -67,19 +57,32 @@
 
   <section class="section-open">
     <h2 class="sec">Ediciones disponibles</h2>
-    <div class="cards">
-      <article class="tc full">
-        <div class="tc-h">
+    <div class="portal-grid">
+      <article class="portal-card">
+        <div class="portal-card-top">
           <span class="tc-num">2026</span>
-          <h3>Producción científica 2026</h3>
-          <span class="pill">47 artículos · 34 capítulos</span>
+          <span class="pill">Año 2026</span>
         </div>
-        <p class="idea">Distribución temática, cuartiles e índice completo de publicaciones con filiación a la Universidad Europea de Madrid.</p>
-        <a class="portal-link" href="2026/">Abrir informe de 2026 →</a>
+        <h3 class="portal-card-title">Producción científica 2026</h3>
+        <p class="portal-desc">Distribución temática, cuartiles e índice completo de publicaciones con filiación a la Universidad Europea de Madrid.</p>
+        <div class="portal-metrics">
+          <span class="portal-metric"><strong>47</strong> artículos</span>
+          <span class="portal-metric metric-accent"><strong>34</strong> capítulos</span>
+        </div>
+        <a class="portal-cta" href="2026/">
+          <span>Abrir informe de 2026</span>
+          <span class="portal-cta-arrow" aria-hidden="true">→</span>
+        </a>
       </article>
     </div>
-    <p style="margin-top: 16px;"><a class="portal-link" href="../">← Volver al portal principal</a></p>
   </section>
+
+  <nav class="back-bar" aria-label="Navegación de retorno">
+    <a class="btn-back" href="../">
+      <span class="btn-back-arrow" aria-hidden="true">←</span>
+      <span>Volver al portal principal</span>
+    </a>
+  </nav>
 </div>
 
 </body>
